@@ -1,0 +1,19 @@
+#include <stdio.h>                               /改后缀为cpp，c语言报错无引用/
+#define maxsize 10
+typedef struct {
+	int data[maxsize];
+	int length;
+}sqlist;
+
+void InitList(sqlist &L){
+	for (int i = 0; i < maxsize; i++)            /省略后脏数据影响顺序表/      
+		L.data[i] = 0;
+    L.length = 0;
+}
+int main() {
+	sqlist L;
+	InitList(L);
+	for (int i = 0; i < maxsize; i++)
+		printf("data[%d]=%d\n", i, L.data[i]);
+	return 0;
+}
