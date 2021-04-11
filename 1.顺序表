@@ -1,3 +1,4 @@
+一、静态分配：
 #include <stdio.h>                               /改后缀为cpp，c语言报错无引用/
 #define maxsize 10
 typedef struct {
@@ -17,3 +18,7 @@ int main() {
 		printf("data[%d]=%d\n", i, L.data[i]);
 	return 0;
 }
+二、动态分配
+#define initsize 10
+typedef struct{
+elemtype 
