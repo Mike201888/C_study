@@ -19,6 +19,60 @@ int main() {
 	return 0;
 }
 二、动态分配
+#include<stdlib.h>        /malloc、free函数的头文件/
+#include<stdio.h>
 #define initsize 10
 typedef struct{
-elemtype 
+elemtype *data;
+int maxsize;
+int length;
+}
+
+void initlist(seqlist &L){
+L.data=(int *)malloc(initsize*sizeof(int));
+L.length=0;
+L.maxsize=initsize;
+}
+void increasesize(seqlist &L, int len){
+int *p=L.data;
+L.data=(int *)malloc((L.maxsize+len)*sizeof(int));
+for(int i=0;i<L.length;i++){
+L.data[i]=p[i];
+}
+L.maxsize=L.maxsize+len;
+free(p);
+}
+int main(){
+seqlist L;
+initlist(L);
+
+
+increasesize(L,5);
+return 0
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
